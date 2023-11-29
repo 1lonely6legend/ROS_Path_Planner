@@ -136,14 +136,18 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 
 set(SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/planner.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/path.cpp
-        src/node2d.cpp
+    src/planner.cpp
+    src/path.cpp
+    src/node2d.cpp
+    src/map.cpp
+        src/astar.cpp
 )
 set(HEADERS
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/planner.h
-        include/node2d.h
-        include/constants.h
+    include/planner.h
+    include/node2d.h
+    include/constants.h
+    include/map.h
+        include/astar.h
 )
  add_executable(${PROJECT_NAME}_node
          src/main.cpp

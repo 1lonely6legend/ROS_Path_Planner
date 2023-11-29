@@ -1,0 +1,6 @@
+<launch>
+ <node name="astar" pkg="astar" type="astar_node" /> 
+ <node name="map_server" pkg="map_server" type="map_server" args="$(find astar)/maps/map.yaml" />
+ <!-- $(find astar)不是宏，是ros中的一种特殊表达式，会被替换为包的完整路径 -->
+ <node name="rviz" pkg="rviz" type="rviz" args="-d $(find astar)/config/test.rviz"/>
+</launch>
