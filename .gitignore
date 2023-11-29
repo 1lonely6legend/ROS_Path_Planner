@@ -4,3 +4,4 @@ devel/
 **/devel/
 .vscode/
 .idea/
+**/cmake-build-debug/
