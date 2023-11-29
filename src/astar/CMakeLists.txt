@@ -148,6 +148,7 @@ set(HEADERS
     include/constants.h
     include/map.h
         include/astar.h
+        include/astar.h
 )
  add_executable(${PROJECT_NAME}_node
          src/main.cpp

@@ -12,11 +12,13 @@
 #include "map.h"
 class Astar {
  public:
-  Astar(Map &map) : map(map){};
-  void calculate() {
-
+  Astar(){};
+  std::list<Node2d*>  calculate() {
+    return {};
   }
  private:
+  Node2d start_node;
+  Node2d goal_node;
   Map map;
   std::list<Node2d*> path;
 };

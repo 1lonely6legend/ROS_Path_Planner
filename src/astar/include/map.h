@@ -11,7 +11,7 @@ using std::vector;
 class Map {
   //定义的地图类
  public:
-  Map();
+  Map(){};
   //更新地图信息
   void update(const nav_msgs::OccupancyGrid::ConstPtr &);
  private:

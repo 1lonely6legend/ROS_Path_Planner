@@ -23,6 +23,6 @@ void Planner::setMap(const nav_msgs::OccupancyGrid::ConstPtr &grid) {
 }
 
 void Planner::plan() {
-
-
+  if(validGoal&&validStart)
+  Astar As();
 }

@@ -4,8 +4,8 @@
 #include <ros/ros.h>
 #include <vector>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
-#include "astar.h"
 #include "node2d.h"
+#include "astar.h"
 #include "constants.h"
 #include "map.h"
 
@@ -31,5 +31,6 @@ class Planner {
   Node2d goal_node;
   bool validGoal = false;
   Map plan_map;
+  std::list<Node2d*> path;
 };
 #endif  // PLANNER_H

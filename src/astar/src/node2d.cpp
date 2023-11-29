@@ -14,12 +14,12 @@ void Node2d::set_used() {
 void Node2d::set_soild() {
   solid = true;
 };
-void Node2d::updateG(){
-
+void Node2d::set_G(int num) {
+  G = num;
 }
-void Node2d::updateH(){
-
+void Node2d::set_H(int num) {
+  H = num;
 }
-void Node2d::updateC(){
-
+void Node2d::set_C(int num) {
+  C = num;
 }
