@@ -4,6 +4,8 @@
 #include <ros/ros.h>
 #include <vector>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <nav_msgs/Path.h>
 #include "node2d.h"
 #include "astar.h"
 #include "constants.h"
@@ -14,7 +16,7 @@ class Planner {
  public:
   Planner();
   void set_start(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr &);
-  void set_goal(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr &);
+  void set_goal(const geometry_msgs::PoseStamped::ConstPtr &);
   void setMap(const nav_msgs::OccupancyGrid::ConstPtr &);
   void plan();
 
@@ -24,6 +26,7 @@ class Planner {
   ros::Subscriber SubStart = n.subscribe("/initialpose", 1, &Planner::set_start, this);
   ros::Subscriber SubGoal = n.subscribe("/move_base_simple/goal", 1, &Planner::set_goal, this);
   ros::Subscriber SubMap = n.subscribe("/map", 1, &Planner::setMap, this);
+  ros::Publisher Path_pub = n.advertise<nav_msgs::Path>("astar_path",10);
   // 存放规划所需要的数据结构，起终点，地图
   Node2d start_node;
   // 标志位，如果设定好就转为TRUE

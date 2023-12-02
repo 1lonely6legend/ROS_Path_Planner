@@ -140,15 +140,15 @@ set(SOURCES
     src/path.cpp
     src/node2d.cpp
     src/map.cpp
-        src/astar.cpp
+    src/astar.cpp
 )
 set(HEADERS
     include/planner.h
     include/node2d.h
     include/constants.h
     include/map.h
-        include/astar.h
-        include/astar.h
+    include/astar.h
+    include/astar.h
 )
  add_executable(${PROJECT_NAME}_node
          src/main.cpp
